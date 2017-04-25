@@ -1,0 +1,6 @@
+C:\Users\Espen\Documents\Visual Studio 2015\Projects\BankApplication\BankApplication\bin\Debug\BankApplication.exe.config
+C:\Users\Espen\Documents\Visual Studio 2015\Projects\BankApplication\BankApplication\bin\Debug\BankApplication.exe
+C:\Users\Espen\Documents\Visual Studio 2015\Projects\BankApplication\BankApplication\bin\Debug\BankApplication.pdb
+C:\Users\Espen\Documents\Visual Studio 2015\Projects\BankApplication\BankApplication\obj\Debug\BankApplication.csprojResolveAssemblyReference.cache
+C:\Users\Espen\Documents\Visual Studio 2015\Projects\BankApplication\BankApplication\obj\Debug\BankApplication.exe
+C:\Users\Espen\Documents\Visual Studio 2015\Projects\BankApplication\BankApplication\obj\Debug\BankApplication.pdb
