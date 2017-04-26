@@ -63,38 +63,26 @@ namespace BankApplication
             }
 
             bool moneyDeposited = false;
-            int counter = 0;
-            while(!moneyDeposited && counter<accounts.Count)
+            int index = findAccount(to);
+            if(index >= 0)
             {
-                Account a = accounts[counter];
-                if (a.GetAccountName().Equals(to))
-                {
-                    a.Deposit(amount);
-                    moneyDeposited = true;
-                }
-                counter++;
+                moneyDeposited = accounts[index].Deposit(amount);
             }
+
             return moneyDeposited;
         }
 
         public bool Withdraw(string from, Money amount)
         {
             //chose to use string from instead of Account from as the first argument. See Deposit-method above
-            bool searchForAccount = true;
             bool isMoneyWithdrawn = false;
-            int counter = 0;
-            Account a;
-
-            while (searchForAccount && counter < accounts.Count)
+            int index = findAccount(from);
+            if(index>= 0)
             {
-                a = accounts[counter];
-                if (a.GetAccountName().Equals(from))
-                {
-                    isMoneyWithdrawn = a.Withdraw(amount);
-                    return isMoneyWithdrawn;
-                }
-                counter++;
+                isMoneyWithdrawn = accounts[index].Withdraw(amount);
+
             }
+
             return isMoneyWithdrawn;
         }
 
@@ -116,6 +104,26 @@ namespace BankApplication
                 }
             }
             return transferSuccessful;
+        }
+
+        private int findAccount(string accountName)
+        {
+            bool searchForAccount = true;
+            int counter = 0;
+            int index = -1;
+            Account a;
+
+            while (searchForAccount && counter < accounts.Count)
+            {
+                a = accounts[counter];
+                if (a.GetAccountName().Equals(accountName))
+                {
+                    index = counter;
+                    searchForAccount = false;
+                }
+                counter++;
+            }
+            return index;
         }
 
         public override string ToString()
